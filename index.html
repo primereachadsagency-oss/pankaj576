@@ -1,98 +1,634 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+<title>Pankaj Bhardwaj Way2Laab</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pankaj</title>
+<meta name="description" content="Join Pankaj Bhardwaj Way2Laab's exclusive Telegram community for daily premium updates, learning resources, and active discussions.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+
+:root {
+  --bg-deep: #060e16;
+  --bg-card: #0c1a26;
+  --bg-card-light: #112233;
+  --accent: #00e676;
+  --accent-light: #69f0ae;
+  --accent-glow: rgba(0, 230, 118, 0.3);
+  --accent-dim: rgba(0, 230, 118, 0.08);
+  --text-primary: #e8f0f8;
+  --text-secondary: #a0b4c8;
+  --text-muted: #607080;
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-accent: rgba(0, 230, 118, 0.25);
 }
 
-body{
-background:#07131d;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-color:#fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.container{
-width:100%;
-max-width:340px;
-background:#101d28;
-border-radius:20px;
-padding:20px;
-text-align:center;
-box-shadow:0 0 20px rgba(0,255,128,.15);
+body {
+  min-height: 100vh;
+  background: var(--bg-deep);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
 }
 
-img{
-width:90px;
-height:90px;
-border-radius:50%;
-border:3px solid #00ff88;
-margin-bottom:15px;
-object-fit:cover;
+/* ===== BG ===== */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-h1{
-font-size:24px;
-margin-bottom:10px;
+.bg-layer .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: orbFloat 14s ease-in-out infinite alternate;
 }
 
-p{
-font-size:14px;
-color:#b7c3cf;
-line-height:1.6;
-margin-bottom:20px;
+.bg-layer .orb:nth-child(1) {
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(0,230,118,0.15), transparent 70%);
+  top: -100px; left: 50%;
+  transform: translateX(-50%);
+  animation-duration: 15s;
 }
 
-.btn{
-display:block;
-background:#00e676;
-color:#04120b;
-padding:14px;
-border-radius:12px;
-text-decoration:none;
-font-weight:bold;
-margin-bottom:25px;
-transition:.3s;
+.bg-layer .orb:nth-child(2) {
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(105,240,174,0.08), transparent 70%);
+  bottom: 5%; right: -50px;
+  animation-duration: 11s;
+  animation-delay: -4s;
 }
 
-.btn:hover{
-background:#00ff88;
+.bg-layer .orb:nth-child(3) {
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(0,230,118,0.06), transparent 70%);
+  bottom: 35%; left: -30px;
+  animation-duration: 18s;
+  animation-delay: -8s;
 }
 
-.card{
-background:#182632;
-padding:15px;
-border-radius:15px;
-margin-bottom:12px;
+@keyframes orbFloat {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(25px, -18px) scale(1.08); }
+  100% { transform: translate(-18px, 25px) scale(0.94); }
 }
 
-.card h3{
-margin-bottom:8px;
-font-size:16px;
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.card p{
-margin:0;
-font-size:13px;
+/* ===== CARD ===== */
+.wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 430px;
+  margin: 20px;
+  background: linear-gradient(170deg, var(--bg-card-light), var(--bg-card));
+  border-radius: 28px;
+  padding: 34px 22px 30px;
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.6),
+    0 0 0 1px var(--border-subtle),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  text-align: center;
+  animation: cardEntry 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.footer{
-margin-top:20px;
-font-size:12px;
-color:#7d8c98;
+@keyframes cardEntry {
+  from { opacity: 0; transform: translateY(35px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
+
+/* ===== PROFILE ===== */
+.profile-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-ring {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--accent);
+  border-right-color: var(--accent-light);
+  animation: ringSpin 3s linear infinite;
+}
+
+.profile-ring-inner {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(0,230,118,0.3);
+  border-left-color: rgba(105,240,174,0.12);
+  animation: ringSpin 5s linear infinite reverse;
+}
+
+@keyframes ringSpin {
+  to { transform: rotate(360deg); }
+}
+
+.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light), var(--accent));
+  position: relative;
+  z-index: 2;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--bg-deep);
+  display: block;
+}
+
+/* ===== TEXT ===== */
+h1 {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* ===== CTA - Compact ===== */
+.cta-main {
+  margin-top: 18px;
+}
+
+.cta-main a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #04120b;
+  text-decoration: none;
+  box-shadow: 0 4px 18px var(--accent-glow);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  animation: ctaPulse 2.2s ease-in-out infinite;
+}
+
+.cta-main a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.cta-main a:hover::after {
+  transform: translateX(100%);
+}
+
+.cta-main a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0,230,118,0.45);
+}
+
+.cta-main a:active {
+  transform: scale(0.97);
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 4px 18px var(--accent-glow); }
+  50%      { box-shadow: 0 4px 30px rgba(0,230,118,0.45), 0 0 0 5px rgba(0,230,118,0.06); }
+}
+
+.cta-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ===== TIMER ===== */
+.timer-box {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: var(--accent-dim);
+  border: 1px dashed rgba(0,230,118,0.2);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0,230,118,0.03), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50%      { transform: translateX(100%); }
+}
+
+.timer-text {
+  font-size: 11px;
+  color: rgba(0,230,118,0.7);
+  position: relative;
+  z-index: 1;
+}
+
+.timer-count {
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+  display: inline-block;
+  min-width: 16px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timer-count.tick {
+  transform: scale(1.3);
+}
+
+.timer-progress {
+  margin-top: 7px;
+  height: 3px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.timer-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 3px;
+  transition: width 1s linear;
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+
+/* ===== FEATURE CARDS ===== */
+.features {
+  margin-top: 18px;
+}
+
+.feature {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 13px 16px;
+  margin-bottom: 8px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+
+.feature:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.feature-text h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1px;
+}
+
+.feature-text p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ===== SECONDARY ROW ===== */
+.cta-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.cta-secondary {
+  flex: 1;
+}
+
+.cta-secondary a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 9px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--accent-light);
+  text-decoration: none;
+  border: 1.5px solid var(--border-accent);
+  transition: all 0.25s ease;
+}
+
+.cta-secondary a:hover {
+  background: rgba(0,230,118,0.06);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.copy-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 9px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.03);
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.copy-btn:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary);
+}
+
+.copy-btn.copied {
+  background: rgba(0,230,118,0.08);
+  border-color: var(--border-accent);
+  color: var(--accent-light);
+}
+
+/* ===== TRUST ===== */
+.trust-dots-row {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.trust-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.trust-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.5;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.trust-dot:nth-child(2) { animation-delay: 0.2s; }
+.trust-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.8); }
+  50%      { opacity: 1; transform: scale(1.1); }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* ===== REDIRECT OVERLAY ===== */
+.redirect-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(4, 10, 18, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.redirect-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.redirect-card {
+  text-align: center;
+  max-width: 340px;
+  width: 100%;
+  animation: overlayPop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes overlayPop {
+  from { opacity: 0; transform: translateY(25px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.redirect-card .r-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 6px 24px var(--accent-glow);
+}
+
+.redirect-card .r-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #04120b;
+}
+
+.redirect-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.redirect-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.redirect-card .ov-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: #04120b;
+  text-decoration: none;
+  box-shadow: 0 6px 24px var(--accent-glow);
+  transition: all 0.25s ease;
+  animation: ctaPulse 2.2s ease-in-out infinite;
+}
+
+.redirect-card .ov-cta:hover {
+  transform: translateY(-2px);
+}
+
+.redirect-card .ov-cta:active {
+  transform: scale(0.97);
+}
+
+.redirect-card .ov-tg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent-light);
+  text-decoration: none;
+  border: 1.5px solid var(--border-accent);
+  transition: all 0.25s ease;
+}
+
+.redirect-card .ov-tg:hover {
+  background: rgba(0,230,118,0.06);
+  border-color: var(--accent);
+}
+
+.redirect-card .ov-copy {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.redirect-card .ov-copy:hover {
+  background: rgba(255,255,255,0.07);
+  color: var(--text-secondary);
+}
+
+.redirect-card .ov-copy.copied {
+  background: rgba(0,230,118,0.08);
+  border-color: var(--border-accent);
+  color: var(--accent-light);
+}
+
+.redirect-card .ov-hint {
+  margin-top: 14px;
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+@media (max-width: 460px) {
+  .wrapper {
+    margin: 12px;
+    padding: 26px 16px 22px;
+    border-radius: 22px;
+  }
+  h1 { font-size: 16px; }
+  .cta-row { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 </style>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -110,48 +646,250 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
 </head>
+
 <body>
 
-<div class="container">
-
-<img src="https://lp2.digitaladsexpert.in/wp-content/uploads/2026/03/pbj.jpg" alt="Profile">
-
-<h1>𝗣𝗔𝗡𝗞𝗔𝗝 𝗕𝗛𝗔𝗥𝗗𝗪𝗔𝗝 𝗪𝗔𝗬𝟮𝗟𝗔𝗔𝗕𝗛™️</h1>
-
-<p>
-Join our exclusive community and get daily premium updates,
-learning resources and active discussions.
-</p>
-
-<a href="https://t.me/+TONSxtldo-lkOTk1" class="btn">
-🚀 Join Telegram
-</a>
-
-<div class="card">
-<h3>🔥 Daily Updates</h3>
-<p>Fresh premium content every day.</p>
+<div class="bg-layer" aria-hidden="true">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
 </div>
 
-<div class="card">
-<h3>📚 Learning</h3>
-<p>Easy to understand educational content.</p>
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<div class="wrapper">
+
+  <!-- Profile with spinning ring -->
+  <div class="profile-wrap">
+    <div class="profile-ring"></div>
+    <div class="profile-ring-inner"></div>
+    <div class="profile">
+      <img src="https://lp2.digitaladsexpert.in/wp-content/uploads/2026/03/pbj.jpg" alt="Pankaj Bhardwaj">
+    </div>
+  </div>
+
+  <h1>𝗣𝗔𝗡𝗞𝗔𝗝 𝗕𝗛𝗔𝗥𝗗𝗪𝗔𝗝<br>𝗪𝗔𝗬𝟮𝗟𝗔𝗔𝗕𝗛™️</h1>
+
+  <p class="desc">
+    Join our exclusive community and get daily premium updates, learning resources and active discussions.
+  </p>
+
+  <!-- Main CTA - compact + Subscribe event -->
+  <div class="cta-main">
+    <a href="https://t.me/+TONSxtldo-lkOTk1" target="_blank" rel="noopener" onclick="trackSubscribe()">
+      <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.075 1.644.418 1.955.34.31.7.534 1.01.71l.022.012 4.52 2.576c.379.716.848 1.602 1.19 2.246.207.378.373.677.483.87l.064.112.018.032c.21.37.486.672.85.863.366.192.737.21 1.066.132a1.96 1.96 0 0 0 .653-.295l.005-.004 2.38-1.923 3.024 2.633.018.015a2.08 2.08 0 0 0 1.536.438c.57-.066 1.015-.37 1.288-.695.27-.322.397-.67.456-.903l.003-.014 2.965-13.174c.141-.627.055-1.167-.19-1.574-.243-.404-.63-.637-1.002-.747a2.07 2.07 0 0 0-.562-.074z"/><path d="M14.5 14.5l-2 4" stroke-width="1.5"/></svg>
+      Join Free Telegram Channel
+    </a>
+  </div>
+
+  <!-- Timer -->
+  <div class="timer-box">
+    <div class="timer-text">
+      Auto redirecting in <span id="countdown" class="timer-count">15</span> seconds
+    </div>
+    <div class="timer-progress">
+      <div class="timer-progress-bar" id="progressBar" style="width: 100%"></div>
+    </div>
+  </div>
+
+  <!-- Feature cards -->
+  <div class="features">
+    <div class="feature">
+      <span class="feature-icon">🔥</span>
+      <div class="feature-text">
+        <h3>Daily Updates</h3>
+        <p>Fresh premium content every day</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">📚</span>
+      <div class="feature-text">
+        <h3>Learning</h3>
+        <p>Easy to understand educational content</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">🤝</span>
+      <div class="feature-text">
+        <h3>Community</h3>
+        <p>Connect with thousands of active members</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary row + Subscribe event on Open App -->
+  <div class="cta-row">
+    <div class="cta-secondary">
+      <a href="tg://join?invite=TONSxtldo-lkOTk1" onclick="trackSubscribe()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Open App
+      </a>
+    </div>
+    <button class="copy-btn" id="copyBtn" onclick="copyLink()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Link
+    </button>
+  </div>
+
+  <div class="trust-dots-row">
+    <span class="trust-dots">
+      <span class="trust-dot"></span>
+      <span class="trust-dot"></span>
+      <span class="trust-dot"></span>
+    </span>
+    Trusted by members across India
+  </div>
+
+  <div class="footer">
+    © 2026 Premium Community
+  </div>
+
 </div>
 
-<div class="card">
-<h3>🤝 Community</h3>
-<p>Connect with thousands of active members.</p>
+<!-- Overlay -->
+<div class="redirect-overlay" id="redirectOverlay">
+  <div class="redirect-card">
+    <div class="r-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.075 1.644.418 1.955.34.31.7.534 1.01.71l.022.012 4.52 2.576c.379.716.848 1.602 1.19 2.246.207.378.373.677.483.87l.064.112.018.032c.21.37.486.672.85.863.366.192.737.21 1.066.132a1.96 1.96 0 0 0 .653-.295l.005-.004 2.38-1.923 3.024 2.633.018.015a2.08 2.08 0 0 0 1.536.438c.57-.066 1.015-.37 1.288-.695.27-.322.397-.67.456-.903l.003-.014 2.965-13.174c.141-.627.055-1.167-.19-1.574-.243-.404-.63-.637-1.002-.747a2.07 2.07 0 0 0-.562-.074z"/><path d="M14.5 14.5l-2 4" stroke-width="1.5"/></svg>
+    </div>
+    <h2>You're Almost There!</h2>
+    <p>Tap below to join Pankaj Bhardwaj Way2Laab's exclusive Telegram community.</p>
+    <a href="https://t.me/+TONSxtldo-lkOTk1" target="_blank" rel="noopener" class="ov-cta" onclick="trackSubscribe()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      Tap to Join Channel
+    </a>
+    <a href="tg://join?invite=TONSxtldo-lkOTk1" class="ov-tg" onclick="trackSubscribe()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Open in Telegram App
+    </a>
+    <button class="ov-copy" id="overlayCopyBtn" onclick="copyLinkOverlay()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:3px"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Link & Open Manually
+    </button>
+    <div class="ov-hint">If nothing happens, copy the link and paste it in your browser or Telegram app</div>
+  </div>
 </div>
 
-<a href="https://t.me/+TONSxtldo-lkOTk1" class="btn">
-🚀 Join Now
-</a>
+<script>
+var TG_WEB = "https://t.me/+TONSxtldo-lkOTk1";
+var TG_APP = "tg://join?invite=TONSxtldo-lkOTk1";
+var attempted = false;
 
-<div class="footer">
-© 2026 Premium Community
-</div>
+/* ===== Pixel Events ===== */
+function trackSubscribe() {
+  if (typeof fbq === "function") fbq("track", "Subscribe");
+}
 
-</div>
+function trackLead() {
+  if (typeof fbq === "function") fbq("track", "Lead");
+}
+
+/* ===== Copy ===== */
+function copyLink() { doCopy(TG_WEB, document.getElementById("copyBtn")); }
+function copyLinkOverlay() { doCopy(TG_WEB, document.getElementById("overlayCopyBtn")); }
+
+function doCopy(text, btn) {
+  var done = function() {
+    var o = btn.innerHTML;
+    btn.classList.add("copied");
+    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:3px"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    setTimeout(function() { btn.innerHTML = o; btn.classList.remove("copied"); }, 2000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function() { fbCopy(text, btn, done); });
+  } else {
+    fbCopy(text, btn, done);
+  }
+}
+
+function fbCopy(text, btn, done) {
+  var t = document.createElement("textarea");
+  t.value = text;
+  t.style.cssText = "position:fixed;left:-9999px";
+  document.body.appendChild(t);
+  t.select();
+  try { document.execCommand("copy"); done(); } catch(e) { btn.textContent = "Failed"; }
+  document.body.removeChild(t);
+}
+
+/* ===== Timer + Redirect ===== */
+(function() {
+  var TOTAL = 15, s = TOTAL;
+  var cd = document.getElementById("countdown");
+  var pb = document.getElementById("progressBar");
+  var ov = document.getElementById("redirectOverlay");
+
+  var t = setInterval(function() {
+    s--;
+    if (cd) { cd.textContent = s; cd.classList.add("tick"); setTimeout(function() { cd.classList.remove("tick"); }, 300); }
+    if (pb) pb.style.width = Math.max(0, (s / TOTAL) * 100) + "%";
+    if (s <= 0) { clearInterval(t); trackLead(); doRedirect(ov); }
+  }, 1000);
+})();
+
+function doRedirect(ov) {
+  if (attempted) return;
+  attempted = true;
+
+  /* Try tg:// via iframe */
+  var f = document.createElement("iframe");
+  f.style.display = "none";
+  f.src = TG_APP;
+  document.body.appendChild(f);
+
+  /* Try window.location */
+  setTimeout(function() { window.location.href = TG_WEB; }, 300);
+
+  /* Fallback: overlay with tap button */
+  setTimeout(function() {
+    if (f.parentNode) f.parentNode.removeChild(f);
+    if (ov) ov.classList.add("active");
+  }, 2000);
+}
+
+/* ===== Particles ===== */
+(function() {
+  var c = document.getElementById("particles");
+  var ctx = c.getContext("2d");
+  var pts = [];
+  function resize() { c.width = innerWidth; c.height = innerHeight; }
+  resize();
+  addEventListener("resize", resize);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  function P() { this.r(); }
+  P.prototype.r = function() {
+    this.x = Math.random() * c.width;
+    this.y = Math.random() * c.height;
+    this.s = Math.random() * 1.8 + 0.4;
+    this.dx = (Math.random() - 0.5) * 0.25;
+    this.dy = (Math.random() - 0.5) * 0.25;
+    this.o = Math.random() * 0.2 + 0.03;
+    this.p = Math.random() * 6.28;
+    this.ps = Math.random() * 0.015 + 0.005;
+  };
+  P.prototype.u = function() {
+    this.x += this.dx; this.y += this.dy; this.p += this.ps;
+    if (this.x < -10 || this.x > c.width + 10 || this.y < -10 || this.y > c.height + 10) this.r();
+  };
+  P.prototype.d = function() {
+    var a = this.o * (0.5 + 0.5 * Math.sin(this.p));
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, Math.max(0.1, this.s), 0, 6.28);
+    ctx.fillStyle = "rgba(0,230,118," + a + ")";
+    ctx.fill();
+  };
+
+  for (var i = 0; i < 28; i++) pts.push(new P());
+  (function loop() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    for (var i = 0; i < pts.length; i++) { pts[i].u(); pts[i].d(); }
+    requestAnimationFrame(loop);
+  })();
+})();
+</script>
 
 </body>
 </html>
