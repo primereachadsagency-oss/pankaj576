@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-<title>Pankaj Bhardwaj Way2Laab</title>
+<title>Pankaj Bhardwaj Way2Laab | Premium Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Join Pankaj Bhardwaj Way2Laab's exclusive Telegram community for daily premium updates, learning resources, and active discussions.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
-  --bg-deep: #060e16;
-  --bg-card: #0c1a26;
-  --bg-card-light: #112233;
-  --accent: #00e676;
-  --accent-light: #69f0ae;
-  --accent-glow: rgba(0, 230, 118, 0.3);
-  --accent-dim: rgba(0, 230, 118, 0.08);
-  --text-primary: #e8f0f8;
-  --text-secondary: #a0b4c8;
-  --text-muted: #607080;
-  --border-subtle: rgba(255,255,255,0.06);
-  --border-accent: rgba(0, 230, 118, 0.25);
+  --bg-deep: #050a0f;
+  --bg-card: rgba(12, 22, 31, 0.6);
+  --bg-card-light: rgba(17, 34, 51, 0.4);
+  --accent: #00ff9d;
+  --accent-light: #00e676;
+  --accent-glow: rgba(0, 255, 157, 0.25);
+  --accent-dim: rgba(0, 255, 157, 0.05);
+  --text-primary: #ffffff;
+  --text-secondary: #b0c4de;
+  --text-muted: #5a6b7e;
+  --border-subtle: rgba(255,255,255,0.08);
+  --border-accent: rgba(0, 255, 157, 0.3);
+  --glass-blur: 24px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Outfit", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -45,52 +45,51 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   position: relative;
+  padding: 20px 0;
 }
 
-/* ===== BG ===== */
+/* ===== Background & Ambient Effects ===== */
 .bg-layer {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  background: radial-gradient(circle at 50% 0%, #0a1520 0%, var(--bg-deep) 60%);
 }
 
 .bg-layer .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  animation: orbFloat 14s ease-in-out infinite alternate;
+  filter: blur(120px);
+  animation: orbFloat 16s ease-in-out infinite alternate;
 }
 
 .bg-layer .orb:nth-child(1) {
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(0,230,118,0.15), transparent 70%);
-  top: -100px; left: 50%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,255,157,0.12), transparent 70%);
+  top: -150px; left: 50%;
   transform: translateX(-50%);
-  animation-duration: 15s;
 }
 
 .bg-layer .orb:nth-child(2) {
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(105,240,174,0.08), transparent 70%);
-  bottom: 5%; right: -50px;
-  animation-duration: 11s;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,230,118,0.05), transparent 70%);
+  bottom: 10%; right: -80px;
   animation-delay: -4s;
 }
 
 .bg-layer .orb:nth-child(3) {
-  width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(0,230,118,0.06), transparent 70%);
-  bottom: 35%; left: -30px;
-  animation-duration: 18s;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(105,240,174,0.04), transparent 70%);
+  bottom: 40%; left: -60px;
   animation-delay: -8s;
 }
 
 @keyframes orbFloat {
   0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(25px, -18px) scale(1.08); }
-  100% { transform: translate(-18px, 25px) scale(0.94); }
+  50%  { transform: translate(30px, -20px) scale(1.1); }
+  100% { transform: translate(-20px, 30px) scale(0.9); }
 }
 
 #particles {
@@ -100,65 +99,61 @@ body {
   pointer-events: none;
 }
 
-/* ===== CARD ===== */
+/* ===== Main Glass Wrapper ===== */
 .wrapper {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 430px;
+  max-width: 440px;
   margin: 20px;
-  background: linear-gradient(170deg, var(--bg-card-light), var(--bg-card));
-  border-radius: 28px;
-  padding: 34px 22px 30px;
+  background: var(--bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 32px;
+  padding: 40px 24px 30px;
+  border: 1px solid var(--border-subtle);
   box-shadow:
-    0 25px 70px rgba(0,0,0,0.6),
-    0 0 0 1px var(--border-subtle),
-    inset 0 1px 0 rgba(255,255,255,0.04);
+    0 30px 80px rgba(0,0,0,0.5),
+    inset 0 1px 1px rgba(255,255,255,0.05);
   text-align: center;
-  animation: cardEntry 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: cardEntry 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes cardEntry {
-  from { opacity: 0; transform: translateY(35px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(40px) scale(0.95); filter: blur(10px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
-/* ===== PROFILE ===== */
+/* ===== Profile Section ===== */
 .profile-wrap {
   position: relative;
   display: inline-block;
+  margin-bottom: 24px;
 }
 
 .profile-ring {
   position: absolute;
-  inset: -7px;
+  inset: -8px;
   border-radius: 50%;
-  border: 2px solid transparent;
-  border-top-color: var(--accent);
-  border-right-color: var(--accent-light);
-  animation: ringSpin 3s linear infinite;
+  background: conic-gradient(from 0deg, var(--accent), transparent 40%, var(--accent-light) 60%, transparent 90%, var(--accent));
+  animation: ringSpin 4s linear infinite;
+  filter: blur(2px);
 }
 
 .profile-ring-inner {
   position: absolute;
-  inset: -2px;
+  inset: -3px;
   border-radius: 50%;
-  border: 1px solid transparent;
-  border-bottom-color: rgba(0,230,118,0.3);
-  border-left-color: rgba(105,240,174,0.12);
-  animation: ringSpin 5s linear infinite reverse;
-}
-
-@keyframes ringSpin {
-  to { transform: rotate(360deg); }
+  background: var(--bg-deep);
+  z-index: 1;
 }
 
 .profile {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light), var(--accent));
+  padding: 4px;
+  background: var(--bg-deep);
   position: relative;
   z-index: 2;
 }
@@ -168,255 +163,308 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  background: var(--bg-deep);
   display: block;
 }
 
-/* ===== TEXT ===== */
+/* Premium Badge */
+.badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--accent);
+  color: #04120b;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  z-index: 3;
+  box-shadow: 0 4px 10px var(--accent-glow);
+}
+
+@keyframes ringSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Typography ===== */
 h1 {
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: 0.5px;
-  line-height: 1.4;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #b0c4de 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1 span {
+  font-weight: 300;
+  letter-spacing: 4px;
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .desc {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-secondary);
-  margin-top: 6px;
+  margin-top: 12px;
   line-height: 1.6;
+  font-weight: 300;
+  padding: 0 10px;
 }
 
-/* ===== CTA ===== */
+/* ===== Main CTA ===== */
 .cta-main {
-  margin-top: 22px;
+  margin-top: 28px;
 }
 
 .cta-main a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
-  padding: 14px 22px;
+  padding: 16px 22px;
   font-size: 15px;
-  font-weight: 700;
-  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 14px;
   background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: #04120b;
   text-decoration: none;
-  box-shadow: 0 4px 18px var(--accent-glow);
-  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px var(--accent-glow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  animation: ctaPulse 2.2s ease-in-out infinite;
 }
 
-.cta-main a::after {
+.cta-main a::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s ease;
 }
 
-.cta-main a:hover::after {
-  transform: translateX(100%);
+.cta-main a:hover::before {
+  left: 100%;
 }
 
 .cta-main a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(0,230,118,0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,255,157,0.4);
 }
 
 .cta-main a:active {
-  transform: scale(0.97);
-}
-
-@keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 4px 18px var(--accent-glow); }
-  50%      { box-shadow: 0 4px 30px rgba(0,230,118,0.45), 0 0 0 5px rgba(0,230,118,0.06); }
+  transform: translateY(0) scale(0.98);
 }
 
 .cta-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
-/* ===== FEATURE CARDS ===== */
+/* ===== Feature Cards ===== */
 .features {
-  margin-top: 20px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .feature {
-  background: rgba(255,255,255,0.025);
+  background: var(--bg-card-light);
   border: 1px solid var(--border-subtle);
   border-radius: 14px;
-  padding: 13px 16px;
-  margin-bottom: 8px;
+  padding: 14px 16px;
   text-align: left;
   display: flex;
   align-items: center;
-  gap: 12px;
-  transition: background 0.2s ease;
+  gap: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .feature:hover {
-  background: rgba(255,255,255,0.04);
+  background: rgba(0, 255, 157, 0.03);
+  border-color: var(--border-accent);
+  transform: translateX(4px);
 }
 
 .feature-icon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: var(--accent-dim);
+  border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .feature-text h3 {
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   color: #fff;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .feature-text p {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text-muted);
-  line-height: 1.4;
+  font-weight: 300;
 }
 
-/* ===== SECONDARY ROW ===== */
+/* ===== Secondary Row ===== */
 .cta-row {
-  margin-top: 14px;
+  margin-top: 16px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
-.cta-secondary {
+.cta-secondary, .copy-btn {
   flex: 1;
+}
+
+.cta-secondary a, .copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
 }
 
 .cta-secondary a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 10px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 9px;
-  background: transparent;
   color: var(--accent-light);
-  text-decoration: none;
-  border: 1.5px solid var(--border-accent);
-  transition: all 0.25s ease;
+  border-color: var(--border-accent);
 }
 
 .cta-secondary a:hover {
-  background: rgba(0,230,118,0.06);
-  border-color: var(--accent);
-  transform: translateY(-1px);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
 }
 
 .copy-btn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 10px 8px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 9px;
-  background: rgba(255,255,255,0.03);
-  color: var(--text-muted);
-  border: 1px solid rgba(255,255,255,0.08);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: "Poppins", sans-serif;
-}
-
-.copy-btn:hover {
-  background: rgba(255,255,255,0.06);
   color: var(--text-secondary);
 }
 
+.copy-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
 .copy-btn.copied {
-  background: rgba(0,230,118,0.08);
+  background: var(--accent-dim);
   border-color: var(--border-accent);
   color: var(--accent-light);
 }
 
-/* ===== TRUST ===== */
-.trust-dots-row {
-  margin-top: 16px;
-  font-size: 12px;
+/* ===== Trust & Stats ===== */
+.trust-stats {
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+}
+
+.stat-label {
+  font-size: 10px;
   color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-subtle);
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
 }
 
-.trust-dots {
-  display: flex;
-  gap: 3px;
-}
-
-.trust-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
+.footer .live-dot {
+  width: 6px;
+  height: 6px;
   background: var(--accent);
-  opacity: 0.5;
-  animation: dotPulse 1.5s ease-in-out infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+  animation: dotPulse 2s infinite;
 }
-
-.trust-dot:nth-child(2) { animation-delay: 0.2s; }
-.trust-dot:nth-child(3) { animation-delay: 0.4s; }
 
 @keyframes dotPulse {
-  0%, 100% { opacity: 0.25; transform: scale(0.8); }
-  50%      { opacity: 1; transform: scale(1.1); }
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 10px;
-  color: var(--text-muted);
-  opacity: 0.7;
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 @media (max-width: 460px) {
   .wrapper {
-    margin: 12px;
-    padding: 26px 16px 22px;
-    border-radius: 22px;
+    margin: 0;
+    padding: 32px 18px 24px;
+    border-radius: 28px;
   }
-  h1 { font-size: 16px; }
+  h1 { font-size: 18px; }
   .cta-row { flex-direction: column; }
+  .trust-stats { padding: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
-
 </style>
 
 <!-- Meta Pixel Code -->
@@ -436,9 +484,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
 </head>
-
 <body>
 
 <div class="bg-layer" aria-hidden="true">
@@ -451,25 +497,28 @@ src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
 
 <div class="wrapper">
 
-  <!-- Profile with spinning ring -->
+  <!-- Profile -->
   <div class="profile-wrap">
     <div class="profile-ring"></div>
     <div class="profile-ring-inner"></div>
     <div class="profile">
       <img src="https://lp2.digitaladsexpert.in/wp-content/uploads/2026/03/pbj.jpg" alt="Pankaj Bhardwaj">
     </div>
+    <div class="badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    </div>
   </div>
 
-  <h1>𝗣𝗔𝗡𝗞𝗔𝗝 𝗕𝗛𝗔𝗥𝗗𝗪𝗔𝗝<br>𝗪𝗔𝗬𝟮𝗟𝗔𝗔𝗕𝗛™️</h1>
+  <h1>Pankaj Bhardwaj<span>WAY2LAABH™</span></h1>
 
   <p class="desc">
-    Join our exclusive community and get daily premium updates, learning resources and active discussions.
+    Step into an exclusive ecosystem. Get daily premium insights, learning resources, and network with active professionals.
   </p>
 
   <!-- Main CTA -->
   <div class="cta-main">
     <a href="https://t.me/+TONSxtldo-lkOTk1" target="_blank" rel="noopener" onclick="trackSubscribe()">
-      <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.855.075 1.644.418 1.955.34.31.7.534 1.01.71l.022.012 4.52 2.576c.379.716.848 1.602 1.19 2.246.207.378.373.677.483.87l.064.112.018.032c.21.37.486.672.85.863.366.192.737.21 1.066.132a1.96 1.96 0 0 0 .653-.295l.005-.004 2.38-1.923 3.024 2.633.018.015a2.08 2.08 0 0 0 1.536.438c.57-.066 1.015-.37 1.288-.695.27-.322.397-.67.456-.903l.003-.014 2.965-13.174c.141-.627.055-1.167-.19-1.574-.243-.404-.63-.637-1.002-.747a2.07 2.07 0 0 0-.562-.074z"/><path d="M14.5 14.5l-2 4" stroke-width="1.5"/></svg>
+      <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.324-.437.891-.663 3.498-1.524 5.83-2.529 6.997-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       Join Free Telegram Channel
     </a>
   </div>
@@ -479,22 +528,22 @@ src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
     <div class="feature">
       <span class="feature-icon">🔥</span>
       <div class="feature-text">
-        <h3>Daily Updates</h3>
-        <p>Fresh premium content every day</p>
+        <h3>Daily Premium Updates</h3>
+        <p>Fresh, high-value content delivered every single day.</p>
       </div>
     </div>
     <div class="feature">
       <span class="feature-icon">📚</span>
       <div class="feature-text">
-        <h3>Learning</h3>
-        <p>Easy to understand educational content</p>
+        <h3>Exclusive Learning</h3>
+        <p>Easy-to-digest resources to accelerate your growth.</p>
       </div>
     </div>
     <div class="feature">
       <span class="feature-icon">🤝</span>
       <div class="feature-text">
-        <h3>Community</h3>
-        <p>Connect with thousands of active members</p>
+        <h3>Active Community</h3>
+        <p>Network with thousands of active, driven members.</p>
       </div>
     </div>
   </div>
@@ -503,27 +552,37 @@ src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
   <div class="cta-row">
     <div class="cta-secondary">
       <a href="tg://join?invite=TONSxtldo-lkOTk1" onclick="trackSubscribe()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Open App
       </a>
     </div>
     <button class="copy-btn" id="copyBtn" onclick="copyLink()">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      Copy Link
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      <span id="copyText">Copy Link</span>
     </button>
   </div>
 
-  <div class="trust-dots-row">
-    <span class="trust-dots">
-      <span class="trust-dot"></span>
-      <span class="trust-dot"></span>
-      <span class="trust-dot"></span>
-    </span>
-    Trusted by members across India
+  <!-- Stats / Social Proof -->
+  <div class="trust-stats">
+    <div class="stat-item">
+      <span class="stat-num">10K+</span>
+      <span class="stat-label">Members</span>
+    </div>
+    <div class="divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">4.9★</span>
+      <span class="stat-label">Rating</span>
+    </div>
+    <div class="divider"></div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Free</span>
+    </div>
   </div>
 
   <div class="footer">
-    © 2026 Premium Community
+    <span class="live-dot"></span>
+    Online Now • Premium Community 2026
   </div>
 
 </div>
@@ -531,22 +590,25 @@ src="https://www.facebook.com/tr?id=1357951935715046&ev=PageView&noscript=1"
 <script>
 var TG_WEB = "https://t.me/+TONSxtldo-lkOTk1";
 
-/* ===== Pixel Events ===== */
+/* Pixel Events */
 function trackSubscribe() {
   if (typeof fbq === "function") fbq("track", "Subscribe");
 }
 
-/* ===== Copy Link ===== */
+/* Copy Link */
 function copyLink() { 
   doCopy(TG_WEB, document.getElementById("copyBtn")); 
 }
 
 function doCopy(text, btn) {
+  var textEl = document.getElementById("copyText");
   var done = function() {
-    var o = btn.innerHTML;
     btn.classList.add("copied");
-    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:3px"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
-    setTimeout(function() { btn.innerHTML = o; btn.classList.remove("copied"); }, 2000);
+    textEl.textContent = "Copied!";
+    setTimeout(function() { 
+      btn.classList.remove("copied"); 
+      textEl.textContent = "Copy Link";
+    }, 2000);
   };
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(done).catch(function() { fbCopy(text, btn, done); });
@@ -565,7 +627,7 @@ function fbCopy(text, btn, done) {
   document.body.removeChild(t);
 }
 
-/* ===== Particles ===== */
+/* Refined Particles System */
 (function() {
   var c = document.getElementById("particles");
   var ctx = c.getContext("2d");
@@ -579,12 +641,12 @@ function fbCopy(text, btn, done) {
   P.prototype.r = function() {
     this.x = Math.random() * c.width;
     this.y = Math.random() * c.height;
-    this.s = Math.random() * 1.8 + 0.4;
-    this.dx = (Math.random() - 0.5) * 0.25;
-    this.dy = (Math.random() - 0.5) * 0.25;
-    this.o = Math.random() * 0.2 + 0.03;
+    this.s = Math.random() * 1.5 + 0.5; // slightly larger
+    this.dx = (Math.random() - 0.5) * 0.2;
+    this.dy = (Math.random() - 0.5) * 0.2;
+    this.o = Math.random() * 0.3 + 0.05;
     this.p = Math.random() * 6.28;
-    this.ps = Math.random() * 0.015 + 0.005;
+    this.ps = Math.random() * 0.01 + 0.005;
   };
   P.prototype.u = function() {
     this.x += this.dx; this.y += this.dy; this.p += this.ps;
@@ -594,11 +656,15 @@ function fbCopy(text, btn, done) {
     var a = this.o * (0.5 + 0.5 * Math.sin(this.p));
     ctx.beginPath();
     ctx.arc(this.x, this.y, Math.max(0.1, this.s), 0, 6.28);
-    ctx.fillStyle = "rgba(0,230,118," + a + ")";
+    ctx.fillStyle = "rgba(0,255,157," + a + ")";
+    ctx.shadowBlur = 10; // Add glow
+    ctx.shadowColor = 'rgba(0,255,157,0.5)';
     ctx.fill();
   };
 
-  for (var i = 0; i < 28; i++) pts.push(new P());
+  var count = window.innerWidth < 600 ? 20 : 35; // responsive count
+  for (var i = 0; i < count; i++) pts.push(new P());
+  
   (function loop() {
     ctx.clearRect(0, 0, c.width, c.height);
     for (var i = 0; i < pts.length; i++) { pts[i].u(); pts[i].d(); }
