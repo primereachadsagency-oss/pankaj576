@@ -1,472 +1,399 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<title>Pankaj Bhardwaj Way2Laab | Premium Community</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Join Pankaj Bhardwaj Way2Laab's exclusive Telegram community for daily premium updates, learning resources, and active discussions.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Way2Laabh - Pankaj Bhardwaj</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0d131a;
+            --card-bg: #141d26;
+            --accent-green: #00e676;
+            --text-main: #ffffff;
+            --text-sub: #94a3b8;
+            --border-color: #1e293b;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-<style>
-:root {
-  --bg-deep: #050a0f;
-  --bg-card: rgba(12, 22, 31, 0.6);
-  --bg-card-light: rgba(17, 34, 51, 0.4);
-  --accent: #00ff9d;
-  --accent-light: #00e676;
-  --accent-glow: rgba(0, 255, 157, 0.25);
-  --accent-dim: rgba(0, 255, 157, 0.05);
-  --text-primary: #ffffff;
-  --text-secondary: #b0c4de;
-  --text-muted: #5a6b7e;
-  --border-subtle: rgba(255,255,255,0.08);
-  --border-accent: rgba(0, 255, 157, 0.3);
-  --glass-blur: 24px;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+            overflow-x: hidden;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
-  -webkit-tap-highlight-color: transparent;
-}
+        /* Entrance Animations Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-body {
-  min-height: 100vh;
-  background: var(--bg-deep);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-primary);
-  overflow-x: hidden;
-  position: relative;
-  padding: 20px 0;
-}
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(0, 230, 118, 0.7);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+            }
+        }
 
-/* ===== Background & Ambient Effects ===== */
-.bg-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 0%, #0a1520 0%, var(--bg-deep) 60%);
-}
+        @keyframes modalZoom {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-.bg-layer .orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  animation: orbFloat 16s ease-in-out infinite alternate;
-}
+        /* Mobile Card Container */
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 24px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-.bg-layer .orb:nth-child(1) {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(0,255,157,0.12), transparent 70%);
-  top: -150px; left: 50%;
-  transform: translateX(-50%);
-}
+        /* Profile Image */
+        .profile-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 16px;
+        }
 
-.bg-layer .orb:nth-child(2) {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(0,230,118,0.05), transparent 70%);
-  bottom: 10%; right: -80px;
-  animation-delay: -4s;
-}
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-green);
+            animation: pulseGlow 3s infinite ease-in-out;
+        }
 
-.bg-layer .orb:nth-child(3) {
-  width: 250px; height: 250px;
-  background: radial-gradient(circle, rgba(105,240,174,0.04), transparent 70%);
-  bottom: 40%; left: -60px;
-  animation-delay: -8s;
-}
+        .verified-badge {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background-color: var(--accent-green);
+            color: #000;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 2px solid var(--bg-color);
+        }
 
-@keyframes orbFloat {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(30px, -20px) scale(1.1); }
-  100% { transform: translate(-20px, 30px) scale(0.9); }
-}
+        /* Typography */
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
 
-#particles {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
+        .brand-subtitle {
+            color: var(--accent-green);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
 
-/* ===== Main Glass Wrapper ===== */
-.wrapper {
-  position: relative;
-  z-index: 10;
-  width: 100%;
-  max-width: 440px;
-  margin: 20px;
-  background: var(--bg-card);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-radius: 32px;
-  padding: 40px 24px 30px;
-  border: 1px solid var(--border-subtle);
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.5),
-    inset 0 1px 1px rgba(255,255,255,0.05);
-  text-align: center;
-  animation: cardEntry 1s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
+        .description {
+            color: var(--text-sub);
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+            padding: 0 8px;
+        }
 
-@keyframes cardEntry {
-  from { opacity: 0; transform: translateY(40px) scale(0.95); filter: blur(10px); }
-  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
-}
+        /* High-Converting CTA Button with Pulse */
+        .cta-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-green);
+            color: #000000;
+            text-decoration: none;
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 20px;
+            animation: pulseGlow 2s infinite ease-in-out;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
 
-/* ===== Profile Section ===== */
-.profile-wrap {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 24px;
-}
+        .cta-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
 
-.profile-ring {
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--accent), transparent 40%, var(--accent-light) 60%, transparent 90%, var(--accent));
-  animation: ringSpin 4s linear infinite;
-  filter: blur(2px);
-}
+        .cta-button:active {
+            transform: scale(0.96);
+        }
 
-.profile-ring-inner {
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background: var(--bg-deep);
-  z-index: 1;
-}
+        .cta-button-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.profile {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  padding: 4px;
-  background: var(--bg-deep);
-  position: relative;
-  z-index: 2;
-}
+        .cta-subtext {
+            font-size: 11px;
+            font-weight: 500;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
 
-.profile img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-}
+        /* Feature Cards with Staggered Fade-In */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
 
-/* Premium Badge */
-.badge {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: var(--accent);
-  color: #04120b;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 3px solid var(--bg-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  z-index: 3;
-  box-shadow: 0 4px 10px var(--accent-glow);
-}
+        .feature-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
 
-@keyframes ringSpin {
-  to { transform: rotate(360deg); }
-}
+        .feature-item:hover {
+            transform: translateX(4px);
+            border-color: rgba(0, 230, 118, 0.4);
+        }
 
-/* ===== Typography ===== */
-h1 {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  line-height: 1.5;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #b0c4de 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+        /* Stagger Delays */
+        .feature-item:nth-child(1) { animation-delay: 0.2s; }
+        .feature-item:nth-child(2) { animation-delay: 0.35s; }
+        .feature-item:nth-child(3) { animation-delay: 0.5s; }
 
-h1 span {
-  font-weight: 300;
-  letter-spacing: 4px;
-  display: block;
-  margin-top: 4px;
-  font-size: 16px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--accent-green);
+            flex-shrink: 0;
+        }
 
-.desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-top: 12px;
-  line-height: 1.6;
-  font-weight: 300;
-  padding: 0 10px;
-}
+        .feature-content h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
 
-/* ===== Main CTA ===== */
-.cta-main {
-  margin-top: 28px;
-}
+        .feature-content p {
+            font-size: 12px;
+            color: var(--text-sub);
+        }
 
-.cta-main a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 16px 22px;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: #04120b;
-  text-decoration: none;
-  box-shadow: 0 8px 24px var(--accent-glow);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-}
+        /* Secondary Action Buttons */
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.6s;
+        }
 
-.cta-main a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.6s ease;
-}
+        .sec-btn {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--accent-green);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
 
-.cta-main a:hover::before {
-  left: 100%;
-}
+        .sec-btn:active {
+            transform: scale(0.95);
+        }
 
-.cta-main a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0,255,157,0.4);
-}
+        .sec-btn-white {
+            color: var(--text-main);
+        }
 
-.cta-main a:active {
-  transform: translateY(0) scale(0.98);
-}
+        /* Stats Counter Bar */
+        .stats-bar {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 8px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.7s;
+        }
 
-.cta-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-}
+        .stat-item {
+            text-align: center;
+        }
 
-/* ===== Feature Cards ===== */
-.features {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+        .stat-value {
+            font-size: 15px;
+            font-weight: 700;
+        }
 
-.feature {
-  background: var(--bg-card-light);
-  border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  padding: 14px 16px;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
+        .stat-label {
+            font-size: 10px;
+            color: var(--text-sub);
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
 
-.feature:hover {
-  background: rgba(0, 255, 157, 0.03);
-  border-color: var(--border-accent);
-  transform: translateX(4px);
-}
+        /* Popup Legal Links Footer */
+        .legal-footer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation-delay: 0.8s;
+        }
 
-.feature-icon {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: var(--accent-dim);
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-}
+        .legal-footer a {
+            color: var(--text-sub);
+            font-size: 11px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-.feature-text h3 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 2px;
-}
+        .legal-footer a:hover {
+            color: var(--accent-green);
+        }
 
-.feature-text p {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 300;
-}
+        /* Modal Animated Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-/* ===== Secondary Row ===== */
-.cta-row {
-  margin-top: 16px;
-  display: flex;
-  gap: 10px;
-}
+        .modal-content {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 20px;
+            position: relative;
+            text-align: left;
+            animation: modalZoom 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-.cta-secondary, .copy-btn {
-  flex: 1;
-}
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
 
-.cta-secondary a, .copy-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 12px 8px;
-  font-size: 12px;
-  font-weight: 500;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-family: "Outfit", sans-serif;
-  border: 1px solid var(--border-subtle);
-  background: transparent;
-}
+        .modal-header h2 {
+            font-size: 16px;
+            color: var(--accent-green);
+        }
 
-.cta-secondary a {
-  color: var(--accent-light);
-  border-color: var(--border-accent);
-}
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-sub);
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
 
-.cta-secondary a:hover {
-  background: var(--accent-dim);
-  transform: translateY(-2px);
-}
+        .close-btn:hover {
+            color: #fff;
+        }
 
-.copy-btn {
-  color: var(--text-secondary);
-}
+        .modal-body {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
 
-.copy-btn:hover {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.15);
-  transform: translateY(-2px);
-}
-
-.copy-btn.copied {
-  background: var(--accent-dim);
-  border-color: var(--border-accent);
-  color: var(--accent-light);
-}
-
-/* ===== Trust & Stats ===== */
-.trust-stats {
-  margin-top: 24px;
-  padding: 16px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 12px;
-  border: 1px solid var(--border-subtle);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-num {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  display: block;
-}
-
-.stat-label {
-  font-size: 10px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 2px;
-}
-
-.divider {
-  width: 1px;
-  height: 24px;
-  background: var(--border-subtle);
-}
-
-/* ===== Footer ===== */
-.footer {
-  margin-top: 20px;
-  font-size: 11px;
-  color: var(--text-muted);
-  font-weight: 300;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-
-.footer .live-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent);
-  animation: dotPulse 2s infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-@media (max-width: 460px) {
-  .wrapper {
-    margin: 0;
-    padding: 32px 18px 24px;
-    border-radius: 28px;
-  }
-  h1 { font-size: 18px; }
-  .cta-row { flex-direction: column; }
-  .trust-stats { padding: 12px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-</style>
-
+        .modal-body p {
+            margin-bottom: 10px;
+        }
+    </style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -477,201 +404,204 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1060265853155159');
+fbq('init', '482998591494917');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1060265853155159&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=482998591494917&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+    
 </head>
 <body>
 
-<div class="bg-layer" aria-hidden="true">
-  <div class="orb"></div>
-  <div class="orb"></div>
-  <div class="orb"></div>
-</div>
+    <div class="card-container">
+        <!-- Profile Section -->
+        <div class="profile-wrapper">
+            <img src="Pankaj11.jpg" alt="Pankaj Bhardwaj" class="profile-img">
+            <div class="verified-badge"><i class="fa-solid fa-check"></i></div>
+        </div>
 
-<canvas id="particles" aria-hidden="true"></canvas>
+        <h1>Pankaj Bhardwaj</h1>
+        <div class="brand-subtitle">WAY2LAABH ™</div>
 
-<div class="wrapper">
+        <p class="description">
+            Step into an exclusive ecosystem. Get daily premium insights, learning resources, and network with active professionals.
+        </p>
 
-  <!-- Profile -->
-  <div class="profile-wrap">
-    <div class="profile-ring"></div>
-    <div class="profile-ring-inner"></div>
-    <div class="profile">
-      <img src="pankaj.jpeg" alt="Pankaj Bhardwaj">
+        <!-- Main CTA (Anti-Fake Click + Pulsing Animation) -->
+        <a href="https://t.me/+tof_J_vMgGs5NWE1" target="_blank" class="cta-button">
+            <div class="cta-button-text">
+                <i class="fa-brands fa-telegram fa-lg"></i>
+                <span>Join Free Telegram Channel</span>
+            </div>
+            <span class="cta-subtext">Clicking opens Telegram App</span>
+        </a>
+
+        <!-- Features List -->
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-fire"></i></div>
+                <div class="feature-content">
+                    <h3>Daily Premium Updates</h3>
+                    <p>Fresh, high-value content delivered every single day.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="feature-content">
+                    <h3>Exclusive Learning</h3>
+                    <p>Easy-to-digest resources to accelerate your growth.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                <div class="feature-content">
+                    <h3>Active Community</h3>
+                    <p>Network with thousands of active, driven members.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Actions -->
+        <div class="action-grid">
+            <a href="https://t.me/+tof_J_vMgGs5NWE1" target="_blank" class="sec-btn">
+                <i class="fa-solid fa-phone"></i> Open App
+            </a>
+            <button class="sec-btn sec-btn-white" onclick="copyLink()">
+                <i class="fa-regular fa-copy"></i> <span id="copyText">Copy Link</span>
+            </button>
+        </div>
+
+        <!-- Social Proof Stats -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">10K+</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">4.9 ★</div>
+                <div class="stat-label">Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Free Access</div>
+            </div>
+        </div>
+
+        <!-- Modal Trigger Links Footer -->
+        <div class="legal-footer">
+            <a href="javascript:void(0)" onclick="openModal('aboutModal')">About Us</a> •
+            <a href="javascript:void(0)" onclick="openModal('termsModal')">Terms</a> •
+            <a href="javascript:void(0)" onclick="openModal('privacyModal')">Privacy</a> •
+            <a href="javascript:void(0)" onclick="openModal('disclaimerModal')">Disclaimer</a> •
+            <a href="javascript:void(0)" onclick="openModal('contactModal')">Contact Us</a>
+        </div>
     </div>
-    <div class="badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+
+    <!-- POPUP MODALS -->
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>About Us</h2>
+                <button class="close-btn" onclick="closeModal('aboutModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to <strong>Way2Laabh™</strong> managed by Pankaj Bhardwaj. We provide daily market insights, educational content, and a community space for learning and networking.</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <h1>Pankaj Bhardwaj<span>WAY2LAABH™</span></h1>
-
-  <p class="desc">
-    Step into an exclusive ecosystem. Get daily premium insights, learning resources, and network with active professionals.
-  </p>
-
-  <!-- Main CTA -->
-  <div class="cta-main">
-    <a href="https://t.me/+tof_J_vMgGs5NWE1" target="_blank" rel="noopener" onclick="trackSubscribe()">
-      <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.324-.437.891-.663 3.498-1.524 5.83-2.529 6.997-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-      Join Free Telegram Channel
-    </a>
-  </div>
-
-  <!-- Feature cards -->
-  <div class="features">
-    <div class="feature">
-      <span class="feature-icon">🔥</span>
-      <div class="feature-text">
-        <h3>Daily Premium Updates</h3>
-        <p>Fresh, high-value content delivered every single day.</p>
-      </div>
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Terms & Conditions</h2>
+                <button class="close-btn" onclick="closeModal('termsModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>By accessing our channel or platform, you agree to our terms. All content shared is strictly for educational purposes.</p>
+            </div>
+        </div>
     </div>
-    <div class="feature">
-      <span class="feature-icon">📚</span>
-      <div class="feature-text">
-        <h3>Exclusive Learning</h3>
-        <p>Easy-to-digest resources to accelerate your growth.</p>
-      </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-btn" onclick="closeModal('privacyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>We respect your privacy. We do not collect or store personal data without your explicit permission.</p>
+            </div>
+        </div>
     </div>
-    <div class="feature">
-      <span class="feature-icon">🤝</span>
-      <div class="feature-text">
-        <h3>Active Community</h3>
-        <p>Network with thousands of active, driven members.</p>
-      </div>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Disclaimer</h2>
+                <button class="close-btn" onclick="closeModal('disclaimerModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>We are not SEBI-registered advisors unless explicitly stated. All updates are for informational and educational purposes only. Investing/trading involves financial risk.</p>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Secondary row -->
-  <div class="cta-row">
-    <div class="cta-secondary">
-      <a href="tg://join?invite=tof_J_vMgGs5NWE1" onclick="trackSubscribe()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        Open App
-      </a>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contact Us</h2>
+                <button class="close-btn" onclick="closeModal('contactModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>For support or queries, contact us via Email: <strong>support@way2laabh.com</strong> or directly via Telegram.</p>
+            </div>
+        </div>
     </div>
-    <button class="copy-btn" id="copyBtn" onclick="copyLink()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-      <span id="copyText">Copy Link</span>
-    </button>
-  </div>
 
-  <!-- Stats / Social Proof -->
-  <div class="trust-stats">
-    <div class="stat-item">
-      <span class="stat-num">10K+</span>
-      <span class="stat-label">Members</span>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-      <span class="stat-num">4.9★</span>
-      <span class="stat-label">Rating</span>
-    </div>
-    <div class="divider"></div>
-    <div class="stat-item">
-      <span class="stat-num">100%</span>
-      <span class="stat-label">Free</span>
-    </div>
-  </div>
+    <script>
+        // Modal Handlers
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
 
-  <div class="footer">
-    <span class="live-dot"></span>
-    Online Now • Premium Community 2026
-  </div>
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
 
-</div>
+        // Close modal when clicking outside box
+        window.onclick = function(event) {
+            let modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
 
-<script>
-var TG_WEB = "https://t.me/+tof_J_vMgGs5NWE1";
+        // Copy Link Handler
+        function copyLink() {
+            const el = document.createElement('textarea');
+            el.value = window.location.href;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
 
-/* Pixel Events */
-function trackSubscribe() {
-  if (typeof fbq === "function") fbq("track", "Subscribe");
-}
-
-/* Copy Link */
-function copyLink() { 
-  doCopy(TG_WEB, document.getElementById("copyBtn")); 
-}
-
-function doCopy(text, btn) {
-  var textEl = document.getElementById("copyText");
-  var done = function() {
-    btn.classList.add("copied");
-    textEl.textContent = "Copied!";
-    setTimeout(function() { 
-      btn.classList.remove("copied"); 
-      textEl.textContent = "Copy Link";
-    }, 2000);
-  };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(done).catch(function() { fbCopy(text, btn, done); });
-  } else {
-    fbCopy(text, btn, done);
-  }
-}
-
-function fbCopy(text, btn, done) {
-  var t = document.createElement("textarea");
-  t.value = text;
-  t.style.cssText = "position:fixed;left:-9999px";
-  document.body.appendChild(t);
-  t.select();
-  try { document.execCommand("copy"); done(); } catch(e) { btn.textContent = "Failed"; }
-  document.body.removeChild(t);
-}
-
-/* Refined Particles System */
-(function() {
-  var c = document.getElementById("particles");
-  var ctx = c.getContext("2d");
-  var pts = [];
-  function resize() { c.width = innerWidth; c.height = innerHeight; }
-  resize();
-  addEventListener("resize", resize);
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-  function P() { this.r(); }
-  P.prototype.r = function() {
-    this.x = Math.random() * c.width;
-    this.y = Math.random() * c.height;
-    this.s = Math.random() * 1.5 + 0.5; // slightly larger
-    this.dx = (Math.random() - 0.5) * 0.2;
-    this.dy = (Math.random() - 0.5) * 0.2;
-    this.o = Math.random() * 0.3 + 0.05;
-    this.p = Math.random() * 6.28;
-    this.ps = Math.random() * 0.01 + 0.005;
-  };
-  P.prototype.u = function() {
-    this.x += this.dx; this.y += this.dy; this.p += this.ps;
-    if (this.x < -10 || this.x > c.width + 10 || this.y < -10 || this.y > c.height + 10) this.r();
-  };
-  P.prototype.d = function() {
-    var a = this.o * (0.5 + 0.5 * Math.sin(this.p));
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, Math.max(0.1, this.s), 0, 6.28);
-    ctx.fillStyle = "rgba(0,255,157," + a + ")";
-    ctx.shadowBlur = 10; // Add glow
-    ctx.shadowColor = 'rgba(0,255,157,0.5)';
-    ctx.fill();
-  };
-
-  var count = window.innerWidth < 600 ? 20 : 35; // responsive count
-  for (var i = 0; i < count; i++) pts.push(new P());
-  
-  (function loop() {
-    ctx.clearRect(0, 0, c.width, c.height);
-    for (var i = 0; i < pts.length; i++) { pts[i].u(); pts[i].d(); }
-    requestAnimationFrame(loop);
-  })();
-})();
-</script>
-
+            const copyTextSpan = document.getElementById('copyText');
+            copyTextSpan.innerText = 'Copied!';
+            setTimeout(() => {
+                copyTextSpan.innerText = 'Copy Link';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
